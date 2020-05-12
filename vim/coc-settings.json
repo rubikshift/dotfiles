@@ -1,0 +1,9 @@
+{
+    "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+	"python.pythonPath": "/usr/bin/python3",
+    "python.jediEnabled": false,
+    "python.formatting.provider": "autopep8",
+    "python.linting.pylintEnabled": true,
+    "coc.preferences.formatOnSaveFiletypes": [
+    ]
+}
