@@ -1,0 +1,15 @@
+install zsh neovim git tmux fzf python3 python3-pip nodejs npm
+jeszcze trzeba pluginy do neovima, do pythona pylint i pep8
+
+ohmyzsh setup
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+
+vim-plug
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \n: 1589016909:0;sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+mkdir -p ~/.config/nvim
+neovim to ~/.config/nvim/init.vim
+
+
+git clone https://github.com/jimeh/tmux-themepack.git ~/.tmux-themepack
