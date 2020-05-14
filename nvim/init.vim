@@ -1,5 +1,7 @@
-set number
-syntax on
+"BASIC
+set nocompatible
+set number relativenumber
+syntax enable
 set colorcolumn=80
 filetype plugin indent on
 hi ColorColumn ctermbg=darkgray
@@ -11,27 +13,37 @@ set shiftwidth=4
 set expandtab
 "set list
 
+
+"PLUGINS
 call plug#begin(stdpath('data') . '/plugged')
-"Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 Plug 'frazrepo/vim-rainbow'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
-"Plug 'junegunn/fzf.vim'
+
 Plug 'kien/ctrlp.vim'
+
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tpope/vim-fugitive'
-Plug 'preservim/nerdcommenter'
-"Plug 'tpope/vim-eunuch'
-Plug 'editorconfig/editorconfig-vim'
-"Plug 'terryma/vim-multiple-cursors'
-Plug 'morhetz/gruvbox'
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+Plug 'tpope/vim-fugitive'
+Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'morhetz/gruvbox'
+
+"Plug 'preservim/nerdcommenter'
+"Plug 'editorconfig/editorconfig-vim'
+"Plug 'terryma/vim-multiple-cursors'
+
 call plug#end()
 
 let g:gruvbox_contrast_dark='hard'
@@ -45,18 +57,19 @@ map <C-n> :NERDTreeToggle<CR>
 "let g:NERDTreeDirArrowExpandable = '▸'
 "let g:NERDTreeDirArrowCollapsible = '▾'
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+"autocmd bufenter * call SyncTree()
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
 "NERDcommenter
-let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1
-let g:NERDDefaultAlign = 'left'
-let g:NERDAltDelims_java = 1
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/'  }, 'py': {'left': '#', 'right': ''}}
-let g:NERDCommentEmptyLines = 1
-let g:NERDTrimTrailingWhitespace = 1
-let g:NERDToggleCheckAllLines = 1
+"let g:NERDSpaceDelims = 1
+"let g:NERDCompactSexyComs = 1
+"let g:NERDDefaultAlign = 'left'
+"let g:NERDAltDelims_java = 1
+"let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/'  }, 'py': {'left': '#', 'right': ''}}
+"let g:NERDCommentEmptyLines = 1
+"let g:NERDTrimTrailingWhitespace = 1
+"let g:NERDToggleCheckAllLines = 1
 
 "autocmd BufEnter * call SyncTree()
 
