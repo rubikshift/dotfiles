@@ -13,6 +13,8 @@ set shiftwidth=4
 set expandtab
 "set list
 
+inoremap <C-s> <ESC>:w<CR>i
+nnoremap <C-s> :w<CR>
 
 "PLUGINS
 call plug#begin(stdpath('data') . '/plugged')
