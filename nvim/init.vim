@@ -30,7 +30,8 @@ Plug 'frazrepo/vim-rainbow'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
 
-Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
+Plug 'junegunn/fzf.vim'
 
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -40,16 +41,23 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
 
-"Plug 'preservim/nerdcommenter'
-"Plug 'editorconfig/editorconfig-vim'
-"Plug 'terryma/vim-multiple-cursors'
+Plug 'takac/vim-hardtime' "developing good habits
+
+" Plug 'preservim/nerdcommenter'
+" Plug 'editorconfig/editorconfig-vim'
+" Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
 
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+" let g:gruvbox_contrast_dark='hard'
+" colorscheme gruvbox
+
+let g:hardtime_default_on = 1
+
+nnoremap <C-p> :Files<CR>
+nnoremap <C-f> :Ag 
 
 "rainbow
 let g:rainbow_active = 1
