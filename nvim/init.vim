@@ -12,6 +12,7 @@ set shiftwidth=4
 "set softtabstop=4
 set expandtab
 "set list
+set spell spelllang=en_us
 
 inoremap <C-s> <ESC>:w<CR>i
 nnoremap <C-s> :w<CR>
@@ -41,7 +42,7 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
 
-" Plug 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 
 Plug 'takac/vim-hardtime' "developing good habits
 
@@ -51,8 +52,8 @@ Plug 'takac/vim-hardtime' "developing good habits
 
 call plug#end()
 
-" let g:gruvbox_contrast_dark='hard'
-" colorscheme gruvbox
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
 
 let g:hardtime_default_on = 1
 
