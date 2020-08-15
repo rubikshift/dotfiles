@@ -14,8 +14,17 @@ set expandtab
 "set list
 set spell spelllang=en_us
 
-inoremap <C-s> <ESC>:w<CR>i
+inoremap jj <ESC>
+inoremap <C-s> <ESC>:w<CR>
 nnoremap <C-s> :w<CR>
+
+vnoremap < <gv
+vnoremap > >gv
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 "PLUGINS
 call plug#begin(stdpath('data') . '/plugged')
@@ -46,6 +55,7 @@ Plug 'morhetz/gruvbox'
 
 Plug 'takac/vim-hardtime' "developing good habits
 
+Plug 'mhinz/vim-startify'
 " Plug 'preservim/nerdcommenter'
 " Plug 'editorconfig/editorconfig-vim'
 " Plug 'terryma/vim-multiple-cursors'
@@ -58,7 +68,7 @@ colorscheme gruvbox
 let g:hardtime_default_on = 1
 
 nnoremap <C-p> :Files<CR>
-nnoremap <C-f> :Ag 
+nnoremap <C-f> :Rg<CR> 
 
 "rainbow
 let g:rainbow_active = 1
