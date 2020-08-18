@@ -11,7 +11,7 @@ set tabstop=4
 set shiftwidth=4
 "set softtabstop=4
 set expandtab
-"set list
+set list
 set spell spelllang=en_us
 
 inoremap jj <ESC>
@@ -43,10 +43,12 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install()  }  }
 Plug 'junegunn/fzf.vim'
 
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'zivyangll/git-blame.vim'
+
+" Plug 'preservim/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
@@ -56,11 +58,10 @@ Plug 'morhetz/gruvbox'
 Plug 'takac/vim-hardtime' "developing good habits
 
 Plug 'mhinz/vim-startify'
-" Plug 'preservim/nerdcommenter'
-" Plug 'editorconfig/editorconfig-vim'
-" Plug 'terryma/vim-multiple-cursors'
 
 call plug#end()
+
+nnoremap <Leader>b :<C-u>call gitblame#echo()<CR>
 
 let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
@@ -73,32 +74,35 @@ nnoremap <C-f> :Rg<CR>
 "rainbow
 let g:rainbow_active = 1
 
-""NERDtree
-map <C-n> :NERDTreeToggle<CR>
-"let g:NERDTreeDirArrowExpandable = '▸'
-"let g:NERDTreeDirArrowCollapsible = '▾'
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-"autocmd bufenter * call SyncTree()
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+"airline
+" enable tabline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
 
-"NERDcommenter
-"let g:NERDSpaceDelims = 1
-"let g:NERDCompactSexyComs = 1
-"let g:NERDDefaultAlign = 'left'
-"let g:NERDAltDelims_java = 1
-"let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/'  }, 'py': {'left': '#', 'right': ''}}
-"let g:NERDCommentEmptyLines = 1
-"let g:NERDTrimTrailingWhitespace = 1
-"let g:NERDToggleCheckAllLines = 1
+" enable powerline fonts
+let g:airline_powerline_fonts = 1
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 
-"autocmd BufEnter * call SyncTree()
+let g:airline_theme = 'gruvbox'
+
+" Always show tabs
+set showtabline=2
+
+" We don't need to see things like -- INSERT -- anymore
+set noshowmode
 
 "coc.vim
 let g:coc_global_extensions=[
 	\'coc-python',
     \'coc-prettier',
 	\'coc-json',
+    \'coc-explorer',
+    \'coc-spell-checker',
+    \'coc-vimlsp',
 	\]
 set hidden
 set nobackup
@@ -186,3 +190,7 @@ nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
 nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
+
+" Explorer
+nmap <C-n> :CocCommand explorer<CR>
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
