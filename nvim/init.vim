@@ -11,7 +11,7 @@ set tabstop=4
 set shiftwidth=4
 "set softtabstop=4
 set expandtab
-set list
+" set list
 set spell spelllang=en_us
 
 inoremap jj <ESC>
@@ -53,20 +53,25 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
+Plug 'ayu-theme/ayu-vim'
 
 Plug 'takac/vim-hardtime' "developing good habits
 
 Plug 'mhinz/vim-startify'
+Plug 'metakirby5/codi.vim'
 
 call plug#end()
 
 nnoremap <Leader>b :<C-u>call gitblame#echo()<CR>
 
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+" let g:gruvbox_contrast_dark='hard'
+" colorscheme gruvbox
+set termguicolors
+let ayucolor="dark"
+colorscheme ayu
 
-let g:hardtime_default_on = 1
+" let g:hardtime_default_on = 1
 
 nnoremap <C-p> :Files<CR>
 nnoremap <C-f> :Rg<CR> 
@@ -87,7 +92,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
-let g:airline_theme = 'gruvbox'
+" let g:airline_theme = 'ayu'
 
 " Always show tabs
 set showtabline=2
