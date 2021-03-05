@@ -2,6 +2,8 @@
 call plug#begin(stdpath('data') . '/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'christoomey/vim-sort-motion'
 
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -32,6 +34,9 @@ Plug 'takac/vim-hardtime' "developing good habits
 
 Plug 'mhinz/vim-startify'
 Plug 'metakirby5/codi.vim'
+
+Plug 'gmarik/vundle'
+Plug 'dag/vim-fish'
 
 call plug#end()
 

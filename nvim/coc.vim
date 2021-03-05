@@ -3,8 +3,8 @@ let g:coc_global_extensions=[
     \'coc-prettier',
 	\'coc-json',
     \'coc-explorer',
-    \'coc-spell-checker',
     \'coc-vimlsp',
+    \'coc-highlight',
 	\]
 
 set hidden

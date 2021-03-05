@@ -4,14 +4,13 @@ source $HOME/.config/nvim/base.vim
 source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/airline.vim
 source $HOME/.config/nvim/coc.vim
+source $HOME/.config/nvim/codi.vim
 
 nnoremap <Leader>b :<C-u>call gitblame#echo()<CR>
 
-" let g:gruvbox_contrast_dark='hard'
-" colorscheme gruvbox
 set termguicolors
-" let ayucolor="dark"
-" colorscheme ayu
+colorscheme koehler
+hi Pmenu guibg=DarkGray
 
 nnoremap <C-p> :Files<CR>
 nnoremap <C-f> :Rg<CR> 

@@ -1,10 +1,14 @@
 set nocompatible
-set number relativenumber
 syntax enable
-set colorcolumn=80
-set cursorline
 filetype plugin indent on
+
+set clipboard=unnamed
+
+set cursorline
+set colorcolumn=80
 hi ColorColumn ctermbg=darkgray
+set number relativenumber
+
 set smarttab
 "set cindent
 set tabstop=4
