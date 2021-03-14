@@ -8,8 +8,6 @@ Plug 'christoomey/vim-sort-motion'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
 Plug 'frazrepo/vim-rainbow'
 Plug 'jiangmiao/auto-pairs'
 Plug 'airblade/vim-gitgutter'
@@ -19,24 +17,25 @@ Plug 'junegunn/fzf.vim'
 
 Plug 'zivyangll/git-blame.vim'
 
-" Plug 'preservim/nerdtree'
-" Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ryanoasis/vim-devicons'
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 Plug 'tpope/vim-fugitive'
 Plug 'christoomey/vim-tmux-navigator'
-
-" Plug 'morhetz/gruvbox'
-" Plug 'ayu-theme/ayu-vim'
-
-Plug 'takac/vim-hardtime' "developing good habits
 
 Plug 'mhinz/vim-startify'
 Plug 'metakirby5/codi.vim'
 
 Plug 'gmarik/vundle'
-Plug 'dag/vim-fish'
+
+Plug 'jalvesaq/Nvim-R'
+
+Plug 'neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'
+
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
