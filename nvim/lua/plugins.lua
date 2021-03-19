@@ -37,7 +37,7 @@ return require('packer').startup(function()
     use 'airblade/vim-rooter'
 
     use 'windwp/nvim-autopairs'
-    use 'terrortylor/nvim-comment'
+    use 'tpope/vim-commentary'
     use 'tpope/vim-surround'
     use 'tpope/vim-repeat'
     use 'tpope/vim-sleuth'
@@ -45,5 +45,7 @@ return require('packer').startup(function()
     use 'Yggdroot/indentLine'
 
     use 'jalvesaq/Nvim-R'
+    -- use 'metakirby5/codi.vim'
+    -- use 'oberblastmeister/neuron.nvim'
 
 end)

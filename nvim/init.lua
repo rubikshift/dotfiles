@@ -5,7 +5,6 @@ require('plugins')
 require('settings')
 require('keymap')
 
-require('nvim_comment').setup{}
 require('lualine').setup{
 	options = {
 		theme = 'auto'
