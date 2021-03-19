@@ -5,6 +5,7 @@ require('plugins')
 require('settings')
 require('keymap')
 
+require('gitsigns').setup()
 require('lualine').setup{
 	options = {
 		theme = 'auto'
