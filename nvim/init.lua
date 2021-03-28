@@ -12,7 +12,7 @@ require('lualine').setup{
 	}
 }
 
-require('autopairs')
+require('nvim-autopairs').setup()
 require('nvimtree')
 
 require('lsp.python')
@@ -23,4 +23,7 @@ require('lsp.efm-general')
 
 require('compe-config')
 
---require('treesitter')
+-- require('treesitter')
+
+require('saga')
+require('lspkind').init({})

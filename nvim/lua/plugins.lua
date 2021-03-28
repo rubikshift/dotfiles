@@ -9,8 +9,9 @@ return require('packer').startup(function()
     use 'norcalli/nvim_utils'
     
     use 'neovim/nvim-lspconfig'
-    -- use 'glepnir/lspsaga.nvim'
-    -- use 'kosayoda/nvim-lightbulb'
+    use 'glepnir/lspsaga.nvim'
+    use 'kosayoda/nvim-lightbulb'
+    use 'onsails/lspkind-nvim'
     use 'hrsh7th/nvim-compe'
 
     use 'hoob3rt/lualine.nvim'
@@ -27,7 +28,7 @@ return require('packer').startup(function()
       }
     }
 
-    --use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    -- use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     use 'ryanoasis/vim-devicons'
 
