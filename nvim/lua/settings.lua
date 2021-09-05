@@ -1,40 +1,54 @@
-vim.o.termguicolors=true
-vim.o.t_Co="256" 
-vim.cmd('colorscheme moonfly')
-vim.cmd('let g:nvcode_termcolors=256')
+local M = {}
 
-vim.o.showmode=false
+M.load_options = function()
+  local opt = vim.opt
+  local defaults = {
+    backup = false,
+    clipboard = "unnamedplus",
+    cmdheight = 2,
+    colorcolumn = '100',
+    completeopt = { "menuone", "noselect" },
+    conceallevel = 0,
+    cursorline = true,
+    expandtab = true,
+    fileencoding = "utf-8",
+    -- foldexpr = "", -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
+    -- foldmethod = "manual", -- folding, set to "expr" for treesitter based folding
+    hidden = true, -- required to keep multiple buffers and open multiple buffers
+    hlsearch = true, -- highlight all matches on previous search pattern
+    ignorecase = true, -- ignore case in search patterns
+    -- mouse = "a", -- allow the mouse to be used in neovim
+    number = true,
+    pumheight = 10,
+    relativenumber = true,
+    scrolloff = 8, -- is one of my fav
+    sidescrolloff = 8,
+    shiftwidth = 4,
+    showmode = false,
+    showtabline = 2,
+    signcolumn = "yes",
+    smartcase = true,
+    smartindent = true,
+    splitbelow = true,
+    splitright = true,
+    swapfile = false, -- creates a swapfile
+    tabstop = 4,
+    termguicolors = true,
+    title = true, -- set the title of window to the value of the titlestring
+    -- undodir = CACHE_PATH .. "/undo", -- set an undo directory
+    undofile = true, -- enable persistent undo
+    updatetime = 300,
+    wrap = false,
+    writebackup = false,
+  }
+  opt.shortmess:append "c"
+  for k,v in pairs(defaults) do
+    vim.opt[k] = v
+  end
 
-vim.o.fileencoding="utf-8"
+  vim.cmd('colorscheme moonfly')
+  vim.cmd('let g:nvcode_termcolors=256')
+end
 
-vim.o.pumheight=10 
-
-vim.wo.wrap=false
-vim.wo.cursorline=true
-vim.wo.colorcolumn='100'
-
-vim.o.conceallevel=0
-
-vim.cmd('set ts=4')
-vim.cmd('set sw=4')
-vim.bo.expandtab=true
-vim.bo.smartindent=true
-
-vim.o.splitbelow=true
-vim.o.splitright=true
-
-vim.o.cmdheight=2
-vim.o.showtabline=2
-
-vim.o.clipboard="unnamedplus"
-
-vim.o.backup=false
-vim.o.writebackup=false 
-
-vim.wo.signcolumn="yes"
-vim.wo.number=true
-vim.wo.relativenumber=true
-
-vim.o.updatetime=300
-
-vim.g.indent_setColors=0
+-- vim.g.indent_setColors=0
+return M

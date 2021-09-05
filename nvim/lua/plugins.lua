@@ -9,10 +9,28 @@ return require('packer').startup(function()
     use 'norcalli/nvim_utils'
     
     use 'neovim/nvim-lspconfig'
-    use 'glepnir/lspsaga.nvim'
     use 'kosayoda/nvim-lightbulb'
     use 'onsails/lspkind-nvim'
     use 'hrsh7th/nvim-compe'
+    use {
+      'hrsh7th/nvim-cmp',
+      requires = {
+        'hrsh7th/vim-vsnip',
+        'hrsh7th/cmp-nvim-lsp',
+        'hrsh7th/cmp-buffer',
+        'saadparwaiz1/cmp_luasnip',
+        'L3MON4D3/LuaSnip',
+        -- https://github.com/hrsh7th/vim-vsnip
+        'hrsh7th/vim-vsnip',
+        'hrsh7th/vim-vsnip-integ',
+      }
+    }
+    use 'nvim-lua/completion-nvim'
+
+    use {
+        'RishabhRD/nvim-lsputils',
+        requires = {'RishabhRD/popfix'}
+    }
 
     use 'hoob3rt/lualine.nvim'
 
@@ -28,7 +46,7 @@ return require('packer').startup(function()
       }
     }
 
-    -- use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
     use 'ryanoasis/vim-devicons'
 
@@ -52,8 +70,10 @@ return require('packer').startup(function()
     use 'christoomey/vim-sort-motion'
     use 'Yggdroot/indentLine'
 
-    use 'jalvesaq/Nvim-R'
+    use 'ray-x/lsp_signature.nvim'
+    use 'simrat39/symbols-outline.nvim'
+
+    -- use 'jalvesaq/Nvim-R'
     -- use 'metakirby5/codi.vim'
-    -- use 'oberblastmeister/neuron.nvim'
 
 end)
