@@ -27,10 +27,10 @@ return require('packer').startup(function()
     }
     use 'nvim-lua/completion-nvim'
 
-    use {
-        'RishabhRD/nvim-lsputils',
-        requires = {'RishabhRD/popfix'}
-    }
+    -- use {
+    --     'RishabhRD/nvim-lsputils',
+    --     requires = {'RishabhRD/popfix'}
+    -- }
 
     use 'hoob3rt/lualine.nvim'
 
@@ -72,6 +72,8 @@ return require('packer').startup(function()
 
     use 'ray-x/lsp_signature.nvim'
     use 'simrat39/symbols-outline.nvim'
+
+    use 'vimwiki/vimwiki'
 
     -- use 'jalvesaq/Nvim-R'
     -- use 'metakirby5/codi.vim'

@@ -1,6 +1,0 @@
-install fish
-curl -L https://get.oh-my.fish | fish
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-
-omf install bobthefish
-omf install fzf

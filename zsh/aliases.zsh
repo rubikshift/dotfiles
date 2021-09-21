@@ -2,6 +2,7 @@ alias vi=nvim
 alias vim=nvim
 alias cat=bat
 alias ls="exa --icons --color=always"
+alias l="ls -la"
 alias ldo=lazydocker
 alias lg=lazygit
 alias les=less

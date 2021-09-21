@@ -2,7 +2,6 @@
 -- other cool stuff https://github.com/rockerBOO/awesome-neovim#treesitter-support
 
 require('plugins')
-require('lsputils')
 require('settings').load_options()
 require('keymap')
 
@@ -27,13 +26,11 @@ require('compe-config')
 
 require('treesitter')
 
--- require('saga')
 require('lspkind').init({})
 require('lsp_signature').setup({
 	-- bind=false,
 	hint_enable=false,
-	-- use_lspsaga=true,
 	hi_parameter = "IncSearch",
 })
-require('nvim-cmp')
-
+-- require('nvim-cmp')
+require('vimwiki')
