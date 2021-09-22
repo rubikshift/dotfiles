@@ -12,8 +12,8 @@ M.load_options = function()
     cursorline = true,
     expandtab = true,
     fileencoding = "utf-8",
-    -- foldexpr = "", -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
-    -- foldmethod = "manual", -- folding, set to "expr" for treesitter based folding
+    foldexpr = "nvim_treesitter#foldexpr()", -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
+    foldmethod = "manual", -- folding, set to "expr" for treesitter based folding
     hidden = true, -- required to keep multiple buffers and open multiple buffers
     hlsearch = true, -- highlight all matches on previous search pattern
     ignorecase = true, -- ignore case in search patterns
@@ -47,7 +47,7 @@ M.load_options = function()
   end
 
   vim.cmd('colorscheme moonfly')
-  vim.cmd('let g:nvcode_termcolors=256')
+  vim.g.nvcode_termcolors=256
 end
 
 -- vim.g.indent_setColors=0
