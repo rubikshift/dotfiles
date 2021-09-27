@@ -3,7 +3,7 @@ local fn = vim.fn
 
 vim.cmd [[packadd packer.nvim]]
 
-return require('packer').startup(function()
+return require('packer').startup({function()
     use {'wbthomason/packer.nvim', opt = true}
     
     use 'norcalli/nvim_utils'
@@ -11,26 +11,21 @@ return require('packer').startup(function()
     use 'neovim/nvim-lspconfig'
     use 'kosayoda/nvim-lightbulb'
     use 'onsails/lspkind-nvim'
-    use 'hrsh7th/nvim-compe'
     use {
       'hrsh7th/nvim-cmp',
       requires = {
-        'hrsh7th/vim-vsnip',
         'hrsh7th/cmp-nvim-lsp',
         'hrsh7th/cmp-buffer',
         'saadparwaiz1/cmp_luasnip',
         'L3MON4D3/LuaSnip',
-        -- https://github.com/hrsh7th/vim-vsnip
-        'hrsh7th/vim-vsnip',
-        'hrsh7th/vim-vsnip-integ',
       }
     }
     use 'nvim-lua/completion-nvim'
 
-    -- use {
-    --     'RishabhRD/nvim-lsputils',
-    --     requires = {'RishabhRD/popfix'}
-    -- }
+    use {
+        'RishabhRD/nvim-lsputils',
+        requires = {'RishabhRD/popfix'}
+    }
 
     use 'hoob3rt/lualine.nvim'
 
@@ -74,8 +69,18 @@ return require('packer').startup(function()
     use 'simrat39/symbols-outline.nvim'
 
     use 'vimwiki/vimwiki'
+    use 'lewis6991/impatient.nvim'
 
     -- use 'jalvesaq/Nvim-R'
     -- use 'metakirby5/codi.vim'
 
-end)
+end,
+
+config = {
+    compile_path = vim.fn.stdpath('config')..'/lua/packer_compiled.lua',
+    display = {
+        open_fn = function()
+          return require('packer.util').float({ border = 'single' })
+        end
+    }
+}})

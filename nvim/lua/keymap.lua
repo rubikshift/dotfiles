@@ -50,7 +50,7 @@ vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>
 -- vim.api.nvim_set_keymap('n', '<C-]>', '<cmd>lua require("lspsaga.action").smart_scroll_with_saga(1)<CR>', { noremap = true, silent = true })
 
 -- tab completions
-vim.api.nvim_set_keymap("i", "<Tab>", "pumvisible() ? v:lua.tab_complete() : '<TAB>'", {expr = true})
-vim.api.nvim_set_keymap("s", "<Tab>", "pumvisible() ? v:lua.tab_complete() : '<TAB>'", {expr = true})
-vim.api.nvim_set_keymap("i", "<S-Tab>", "pumvisible() ? v:lua.s_tab_complete() : '<S-TAB>'", {expr = true})
-vim.api.nvim_set_keymap("s", "<S-Tab>", "pumvisible() ? v:lua.s_tab_complete() : '<S-TAB>'", {expr = true})
+-- vim.api.nvim_set_keymap("i", "<Tab>", "pumvisible() ? v:lua.tab_complete() : '<TAB>'", {expr = true})
+-- vim.api.nvim_set_keymap("s", "<Tab>", "pumvisible() ? v:lua.tab_complete() : '<TAB>'", {expr = true})
+-- vim.api.nvim_set_keymap("i", "<S-Tab>", "pumvisible() ? v:lua.s_tab_complete() : '<S-TAB>'", {expr = true})
+-- vim.api.nvim_set_keymap("s", "<S-Tab>", "pumvisible() ? v:lua.s_tab_complete() : '<S-TAB>'", {expr = true})
