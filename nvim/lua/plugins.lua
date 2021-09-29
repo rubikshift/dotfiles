@@ -45,8 +45,11 @@ return require('packer').startup({function()
 
     use 'ryanoasis/vim-devicons'
 
-    use 'kyazdani42/nvim-web-devicons'
-    use 'kyazdani42/nvim-tree.lua'
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = 'kyazdani42/nvim-web-devicons',
+        config = function() require'nvim-tree'.setup {} end
+    }
 
     use 'bluz71/vim-moonfly-colors'
     use 'norcalli/nvim-colorizer.lua'
