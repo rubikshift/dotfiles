@@ -1,0 +1,19 @@
+setopt CORRECT
+setopt CORRECT_ALL
+setopt APPEND_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt MENU_COMPLETE
+setopt EXTENDED_GLOB
+unsetopt BEEP
+bindkey -v
+autoload -Uz colors && colors
+
+zstyle ':completion:*' menu select
+
+# aliases
+source "$HOME/repos/dotfiles/zsh/aliases.zsh"
+
+# zoxide
+source "$HOME/repos/dotfiles/zsh/zoxide.zsh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
