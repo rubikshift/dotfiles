@@ -8,4 +8,8 @@
   fi
 } &!
 
+if [[ -z $TMUX ]]; then
+  tmux attach -t valhalla || tmux new -s valhalla
+fi
 
+fortune -s
