@@ -19,6 +19,7 @@ require('lualine').setup{
 require('nvim-autopairs').setup()
 require('nvimtree')
 
+require('my-cmp-cfg')
 require('lsp.python')
 require('lsp.cpp')
 -- require('lsp.r')
@@ -35,5 +36,4 @@ require('lsp_signature').setup({
 	hi_parameter = "IncSearch",
 })
 
-require('my-cmp-cfg')
 require('vimwiki')
