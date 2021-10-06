@@ -9,6 +9,8 @@ bindkey -v
 autoload -Uz colors && colors
 
 zstyle ':completion:*' menu select
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "$HOME/.zsh_cache"
 
 # aliases
 source "$HOME/repos/dotfiles/zsh/aliases.zsh"

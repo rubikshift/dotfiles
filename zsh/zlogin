@@ -12,4 +12,12 @@ if [[ -z $TMUX ]]; then
   tmux attach -t valhalla || tmux new -s valhalla
 fi
 
-fortune -s
+# fortune -s
+USER_PROMPT='%F{#5fff5f}%n%f'
+HOSTNAME_PROMPT='%F{#ff00af}%m%f'
+DIRECTORY_PROMP='%F{#00afff}%~%f%b'
+NEWLINE_PROMPT=$'\n'
+PROMPT=$USER_PROMPT'@'$HOSTNAME_PROMPT
+PROMPT=$PROMPT':'$DIRECTORY_PROMP$NEWLINE_PROMPT
+PROMPT=$PROMPT'%(!.#.$) '
+# PROMPT=$PROMPT'%(!.#.%F{green}'$'\ue285''%f) '

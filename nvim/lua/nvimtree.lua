@@ -4,10 +4,10 @@ vim.g.nvim_tree_indent_markers = 1
 
 require('nvim-tree').setup({
   hijack_cursor = true,
-  tree_auto_close = true,
+  auto_close = true,
   update_focused_file = {
     enable = true,
   },
+  lsp_diagnostics = true,
 })
-
 
