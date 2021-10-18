@@ -12,7 +12,7 @@ require('keymap')
 require('gitsigns').setup()
 require('lualine').setup{
 	options = {
-		theme = 'auto'
+		theme = 'moonfly'
 	}
 }
 

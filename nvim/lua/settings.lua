@@ -6,14 +6,15 @@ M.load_options = function()
     backup = false,
     clipboard = "unnamedplus",
     cmdheight = 2,
-    colorcolumn = '100',
+    colorcolumn = '80',
     completeopt = { "menuone", "noselect" },
     conceallevel = 0,
     cursorline = true,
     expandtab = true,
     fileencoding = "utf-8",
     foldexpr = "nvim_treesitter#foldexpr()", -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
-    foldmethod = "manual", -- folding, set to "expr" for treesitter based folding
+    foldmethod = "expr", -- folding, set to "expr" for treesitter based folding
+    foldenable = false,
     hidden = true, -- required to keep multiple buffers and open multiple buffers
     hlsearch = true, -- highlight all matches on previous search pattern
     ignorecase = true, -- ignore case in search patterns
@@ -21,7 +22,7 @@ M.load_options = function()
     number = true,
     pumheight = 10,
     relativenumber = true,
-    scrolloff = 8, -- is one of my fav
+    scrolloff = 8, --idk
     sidescrolloff = 8,
     shiftwidth = 4,
     showmode = false,
@@ -48,6 +49,8 @@ M.load_options = function()
 
   vim.cmd('colorscheme moonfly')
   vim.g.nvcode_termcolors=256
+  -- remove trailing whitespace on save
+  vim.api.nvim_command([[autocmd BufWritePre * :%s/\s\+$//e]])
 end
 
 -- vim.g.indent_setColors=0

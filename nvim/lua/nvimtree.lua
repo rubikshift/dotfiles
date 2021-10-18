@@ -8,6 +8,8 @@ require('nvim-tree').setup({
   update_focused_file = {
     enable = true,
   },
-  lsp_diagnostics = true,
+  diagnostics = {
+    enable = true,
+  },
 })
 
