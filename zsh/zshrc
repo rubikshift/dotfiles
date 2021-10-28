@@ -1,11 +1,21 @@
 setopt CORRECT
-setopt CORRECT_ALL
+# setopt CORRECT_ALL
 setopt APPEND_HISTORY
 setopt HIST_IGNORE_ALL_DUPS
 setopt MENU_COMPLETE
 setopt EXTENDED_GLOB
 unsetopt BEEP
+
+# vim keymap
 bindkey -v
+
+# habit of ctrl-a and ctrl-e in shell
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+
+fpath=($HOME/repos/dotfiles/zsh/functions $fpath)
+autoload -Uz mvbck cpbck
+
 autoload -Uz colors && colors
 
 zstyle ':completion:*' menu select

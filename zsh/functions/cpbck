@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+function cpbck {
+  [[ -a $1 ]] && cp $1 "$1.bck"
+}

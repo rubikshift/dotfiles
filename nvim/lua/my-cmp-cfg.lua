@@ -8,7 +8,7 @@ local lspkind = require 'lspkind'
 -- nvim-cmp setup
 local cmp = require 'cmp'
 
-cmp.setup {
+cmp.setup({
   snippet = {
     expand = function(args)
       require('luasnip').lsp_expand(args.body)
@@ -18,14 +18,16 @@ cmp.setup {
     completeopt = 'menu,menuone,noinsert',
   },
   mapping = {
-    ['<C-p>'] = cmp.mapping.select_prev_item(),
-    ['<C-n>'] = cmp.mapping.select_next_item(),
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<C-y>'] = cmp.mapping.confirm(),
-    -- ['<CR>'] = cmp.mapping.confirm(),
+    ['<C-p>'] = cmp.mapping(cmp.mapping.select_prev_item(), {'i', 'c'}),
+    ['<C-n>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i', 'c'}),
+    ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), {'i', 'c'}),
+    ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), {'i', 'c'}),
+    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), {'i', 'c'}),
+    ['<C-e>'] = cmp.mapping.close({
+      i = cmp.mapping.abort(),
+      c = cmp.mapping.close(),
+    }),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ['<Tab>'] = function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -51,6 +53,7 @@ cmp.setup {
     { name = 'treesiter' },
     { name = 'buffer' },
     { name = 'path' },
+    { name = 'cmdline' }
   },
   formatting = {
     format = function(entry, vim_item)
@@ -58,4 +61,17 @@ cmp.setup {
       return vim_item
     end
   },
-}
+})
+
+cmp.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+cmp.setup.cmdline(':', {
+  sources = {
+    { name = 'path' },
+    { name = 'cmdline' }
+  }
+})
