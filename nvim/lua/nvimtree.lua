@@ -1,5 +1,3 @@
-vim.g.nvim_tree_ignore = { '.git', '.cache' }
-vim.g.nvim_tree_hide_dotfiles = 1
 vim.g.nvim_tree_indent_markers = 1
 
 require('nvim-tree').setup({
@@ -10,6 +8,13 @@ require('nvim-tree').setup({
   },
   diagnostics = {
     enable = true,
+  },
+  filters = {
+    dotfiles = true,
+    custom = {
+      '.git',
+      '.cache',
+    }
   },
 })
 
