@@ -56,11 +56,12 @@ cmp.setup({
     { name = 'cmdline' }
   },
   formatting = {
-    format = function(entry, vim_item)
-      vim_item.kind = lspkind.presets.default[vim_item.kind]
-      return vim_item
-    end
+    format = lspkind.cmp_format(),
   },
+  experimental = {
+    native_menu = true,
+    ghost_text = true,
+  }
 })
 
 cmp.setup.cmdline('/', {
