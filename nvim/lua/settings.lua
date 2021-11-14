@@ -47,8 +47,6 @@ M.load_options = function()
     vim.opt[k] = v
   end
 
-  vim.cmd('colorscheme moonfly')
-  vim.g.nvcode_termcolors=256
   -- remove trailing whitespace on save
   vim.api.nvim_command([[autocmd BufWritePre * :%s/\s\+$//e]])
 end
