@@ -49,6 +49,12 @@ M.load_options = function()
 
   -- remove trailing whitespace on save
   vim.api.nvim_command([[autocmd BufWritePre * :%s/\s\+$//e]])
+
+  -- set spellcheck for given filetypes
+  vim.api.nvim_command([[autocmd FileType markdown setlocal spell]])
+  vim.api.nvim_command([[autocmd FileType text setlocal spell]])
+  vim.api.nvim_command([[autocmd FileType gitcommit setlocal spell]])
+  vim.api.nvim_command([[autocmd FileType vimwiki setlocal spell]])
 end
 
 -- vim.g.indent_setColors=0

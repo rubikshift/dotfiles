@@ -29,3 +29,6 @@ source "$HOME/repos/dotfiles/zsh/aliases.zsh"
 source "$HOME/repos/dotfiles/zsh/zoxide.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# prompt
+source "$HOME/repos/dotfiles/zsh/prompt.zsh"

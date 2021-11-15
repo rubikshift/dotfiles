@@ -4,19 +4,17 @@
 require('impatient')
 require('packer_compiled')
 
-require('lsputils')
 require('plugins')
+
 require('settings').load_options()
 require('keymap')
 
-require('gitsigns').setup()
 
 require('lsp.python')
 require('lsp.cpp')
--- require('lsp.r')
+require('lsp.r')
 require('lsp.efm-general')
---require('lsp.lua')
---require('lsp.json-ls')
+require('lsp.cmake')
 
 
 

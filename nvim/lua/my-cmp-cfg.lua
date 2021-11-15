@@ -1,5 +1,4 @@
--- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
+vim.o.completeopt = 'menu,menuone,noselect'
 
 -- luasnip setup
 local luasnip = require 'luasnip'
@@ -27,6 +26,7 @@ cmp.setup({
       i = cmp.mapping.abort(),
       c = cmp.mapping.close(),
     }),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
     ['<Tab>'] = function(fallback)
       if cmp.visible() then
@@ -59,7 +59,7 @@ cmp.setup({
     format = lspkind.cmp_format(),
   },
   experimental = {
-    native_menu = true,
+    -- native_menu = true,
     ghost_text = true,
   }
 })

@@ -11,3 +11,5 @@ alias find=fd
 alias fl="l | rg -i"
 alias brewup="brew update && brew upgrade; brew doctor"
 alias rm="rm -i"
+alias cd="z"
+alias cdi="zi"
