@@ -10,11 +10,10 @@ require('settings').load_options()
 require('keymap')
 
 
-require('lsp.python')
-require('lsp.cpp')
-require('lsp.r')
-require('lsp.efm-general')
 require('lsp.cmake')
-
-
+require('lsp.cpp')
+require('lsp.efm-general')
+require('lsp.perl')
+require('lsp.python')
+require('lsp.r')
 
