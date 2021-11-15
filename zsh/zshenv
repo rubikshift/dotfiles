@@ -9,7 +9,7 @@ if [[ "$OSTYPE" == darwin* ]]; then
   export BROWSER='open'
 fi
 
-export MANPAGER='nvim +Man!'
+export MANPAGER='nvim -c Man!'
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=1000000
 export SAVEHIST=1000000

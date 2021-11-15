@@ -2,13 +2,12 @@
 -- other cool stuff https://github.com/rockerBOO/awesome-neovim#treesitter-support
 
 require('impatient')
-require('packer_compiled')
-
-require('plugins')
 
 require('settings').load_options()
 require('keymap')
 
+require('packer_compiled')
+require('plugins')
 
 require('lsp.cmake')
 require('lsp.cpp')

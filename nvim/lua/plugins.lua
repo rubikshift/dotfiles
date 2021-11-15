@@ -15,7 +15,7 @@ return require('packer').startup({
         }
 
         use 'neovim/nvim-lspconfig'
-        use 'kosayoda/nvim-lightbulb'
+        -- use 'kosayoda/nvim-lightbulb'
         use {
             'onsails/lspkind-nvim',
             config = function()
@@ -93,7 +93,9 @@ return require('packer').startup({
             'code-biscuits/nvim-biscuits',
             require = 'nvim-treesitter/nvim-treesitter',
             config = function()
-                require('nvim-biscuits').setup({})
+                require('nvim-biscuits').setup({
+                    show_on_start = true,
+                })
             end
         }
         use {
@@ -112,8 +114,6 @@ return require('packer').startup({
                 require("nvim-gps").setup()
             end
         }
-
-        use 'ryanoasis/vim-devicons'
 
         use {
             'kyazdani42/nvim-tree.lua',
@@ -148,12 +148,23 @@ return require('packer').startup({
               vim.cmd('colorscheme moonfly')
             end
         }
-        use 'norcalli/nvim-colorizer.lua'
+        use {
+            'norcalli/nvim-colorizer.lua',
+            config = function()
+                require'colorizer'.setup()
+            end
+        }
 
         use 'zivyangll/git-blame.vim'
-        -- use 'tpope/vim-fugitive'
+        use 'tpope/vim-fugitive'
 
-        use 'mhinz/vim-startify'
+        use {
+            'goolord/alpha-nvim',
+            requires = { 'kyazdani42/nvim-web-devicons' },
+            config = function ()
+                require'alpha'.setup(require'alpha.themes.startify'.opts)
+            end
+        }
         use 'airblade/vim-rooter'
 
         use {
@@ -162,26 +173,36 @@ return require('packer').startup({
                 require('nvim-autopairs').setup()
             end
         }
-        -- use 'tpope/vim-commentary'
+
         use {
             'numToStr/Comment.nvim',
             config = function()
                 require('Comment').setup()
             end
         }
+
         use 'tpope/vim-surround'
         use 'tpope/vim-repeat'
         use 'tpope/vim-sleuth'
-        use 'christoomey/vim-sort-motion'
-        use 'Yggdroot/indentLine'
+
+        use {
+            'lukas-reineke/indent-blankline.nvim',
+            config = function()
+                vim.opt.list = true
+                require("indent_blankline").setup {
+                    -- char = "|",
+                    buftype_exclude = {"terminal"},
+                    show_current_context = true,
+                    show_current_context_start = true,
+                }
+            end
+        }
 
         use {
             'ray-x/lsp_signature.nvim',
             config = function()
                 require('lsp_signature').setup({
-                    -- bind=false,
-                    hint_enable=false,
-                    hi_parameter = "IncSearch",
+                    hint_enable= false,
                 })
             end
         }
@@ -203,6 +224,15 @@ return require('packer').startup({
 
         -- use 'jalvesaq/Nvim-R'
         -- use 'metakirby5/codi.vim'
+
+        use {
+            'tami5/lspsaga.nvim',
+            config = function()
+                require('lspsaga').setup({
+                })
+
+            end
+        }
 
     end,
 
