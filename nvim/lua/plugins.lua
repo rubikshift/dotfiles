@@ -1,26 +1,21 @@
-local execute = vim.api.nvim_command
 local fn = vim.fn
 
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup({
-    function()
+    function(use)
         use {'wbthomason/packer.nvim', opt = true}
 
         use {
             'norcalli/nvim_utils',
-            config = function()
-                require('lsputils')
-            end
+            config = [[require('config.nvim_utils')]]
         }
 
         use 'neovim/nvim-lspconfig'
-        -- use 'kosayoda/nvim-lightbulb'
+
         use {
             'onsails/lspkind-nvim',
-            config = function()
-                require('lspkind').init({})
-            end
+            config = [[require('lspkind').init({})]]
         }
         use {
             'hrsh7th/nvim-cmp',
@@ -32,9 +27,7 @@ return require('packer').startup({
                 'saadparwaiz1/cmp_luasnip',
                 'L3MON4D3/LuaSnip',
             },
-            config = function()
-                require('my-cmp-cfg')
-            end
+            config = [[require('config.nvim-cmp')]]
         }
 
         use {
@@ -44,19 +37,8 @@ return require('packer').startup({
 
         use {
             'hoob3rt/lualine.nvim',
-            config = function()
-                local gps = require("nvim-gps")
-                require('lualine').setup{
-                    options = {
-                        theme = 'moonfly'
-                    },
-                    sections = {
-                        lualine_c = {
-                            { gps.get_location, cond = gps.is_available },
-                        }
-                    }
-                }
-            end
+            require = {'SmiteshP/nvim-gps'},
+            config = [[require('config.lualine')]]
         }
 
         use {
@@ -69,9 +51,7 @@ return require('packer').startup({
 
         use {
             'lewis6991/gitsigns.nvim',
-            config = function()
-                require('gitsigns').setup()
-            end,
+            config = [[require('gitsigns').setup()]],
             requires = {
                 'nvim-lua/plenary.nvim'
             }
@@ -79,80 +59,35 @@ return require('packer').startup({
 
         use {
             'nvim-treesitter/nvim-treesitter',
+            require = {'nvim-treesitter/nvim-treesitter-refactor'},
             run = ':TSUpdate',
-            config = function()
-                require'nvim-treesitter.configs'.setup {
-                    ensure_installed = "maintained",
-                    highlight = {
-                        enable = true,
-                    },
-                }
-            end
+            config = [[require('config.nvim-treesitter')]]
         }
         use {
             'code-biscuits/nvim-biscuits',
             require = 'nvim-treesitter/nvim-treesitter',
-            config = function()
-                require('nvim-biscuits').setup({
-                    show_on_start = true,
-                })
-            end
+            config = [[require('config.nvim-biscuits')]]
         }
+
         use {
-            'lewis6991/spellsitter.nvim',
-            require = 'nvim-treesitter/nvim-treesitter',
-            config = function()
-                require('spellsitter').setup({
-                    enable = true,
-                })
-            end
-        }
-        use {
-            "SmiteshP/nvim-gps",
-            requires = "nvim-treesitter/nvim-treesitter",
-            config = function()
-                require("nvim-gps").setup()
-            end
+            'SmiteshP/nvim-gps',
+            requires = 'nvim-treesitter/nvim-treesitter',
+            config = [[require('nvim-gps').setup()]]
         }
 
         use {
             'kyazdani42/nvim-tree.lua',
             requires = 'kyazdani42/nvim-web-devicons',
-            config = function()
-                vim.g.nvim_tree_indent_markers = 1
-                require'nvim-tree'.setup({
-                    hijack_cursor = true,
-                    auto_close = true,
-                    update_focused_file = {
-                        enable = true,
-                    },
-                    diagnostics = {
-                        enable = true,
-                    },
-                    filters = {
-                        dotfiles = true,
-                        custom = {
-                            '.git',
-                            '.cache',
-                        }
-                    },
-
-                })
-            end
+            config = [[require('config.nvim-tree')]]
         }
 
         use {
             'bluz71/vim-moonfly-colors',
-            config = function()
-              vim.g.nvcode_termcolors=256
-              vim.cmd('colorscheme moonfly')
-            end
+            config = [[require('config.vim-moonfly-colors')]]
         }
         use {
             'norcalli/nvim-colorizer.lua',
-            config = function()
-                require'colorizer'.setup()
-            end
+            config = [[require('colorizer').setup()]]
         }
 
         use 'zivyangll/git-blame.vim'
@@ -169,16 +104,12 @@ return require('packer').startup({
 
         use {
             'windwp/nvim-autopairs',
-            config = function()
-                require('nvim-autopairs').setup()
-            end
+            config = [[require('nvim-autopairs').setup()]]
         }
 
         use {
             'numToStr/Comment.nvim',
-            config = function()
-                require('Comment').setup()
-            end
+            config = [[require('Comment').setup()]]
         }
 
         use 'tpope/vim-surround'
@@ -187,38 +118,18 @@ return require('packer').startup({
 
         use {
             'lukas-reineke/indent-blankline.nvim',
-            config = function()
-                vim.opt.list = true
-                require("indent_blankline").setup {
-                    -- char = "|",
-                    buftype_exclude = {"terminal"},
-                    show_current_context = true,
-                    show_current_context_start = true,
-                }
-            end
+            config = [[require('config.indent-blankline')]]
         }
 
         use {
             'ray-x/lsp_signature.nvim',
-            config = function()
-                require('lsp_signature').setup({
-                    hint_enable= false,
-                })
-            end
+            config = [[require('config.lsp_signature')]]
         }
         use 'simrat39/symbols-outline.nvim'
 
         use {
             'vimwiki/vimwiki',
-            config=function()
-                vim.g.vimwiki_list = {
-                  {
-                    path = "$HOME/notes",
-                    syntax = "markdown",
-                    ext = ".md"
-                  }
-                }
-            end
+            config = [[require('config.vimwiki')]]
         }
         use 'lewis6991/impatient.nvim'
 
@@ -227,11 +138,7 @@ return require('packer').startup({
 
         use {
             'tami5/lspsaga.nvim',
-            config = function()
-                require('lspsaga').setup({
-                })
-
-            end
+            config = [[require('lspsaga').setup({})]]
         }
 
     end,
