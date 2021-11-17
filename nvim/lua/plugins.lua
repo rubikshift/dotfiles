@@ -32,7 +32,8 @@ return require('packer').startup({
 
         use {
             'RishabhRD/nvim-lsputils',
-            requires = {'RishabhRD/popfix'}
+            requires = {'RishabhRD/popfix'},
+            config = [[require('config.lsputils')]]
         }
 
         use {
@@ -91,7 +92,7 @@ return require('packer').startup({
         }
 
         use 'zivyangll/git-blame.vim'
-        use 'tpope/vim-fugitive'
+        -- use 'tpope/vim-fugitive'
 
         use {
             'goolord/alpha-nvim',
