@@ -1,15 +1,16 @@
-alias vi=nvim
-alias vim=nvim
-alias cat=bat
-alias ls="exa --icons --color=always"
-alias l="ls -la"
-alias ldo=lazydocker
-alias lg=lazygit
-alias les=less
-alias rgf="rg --files | rg -i"
-alias find=fd
-alias fl="l | rg -i"
 alias brewup="brew update && brew upgrade; brew doctor"
-alias rm="rm -i"
+alias cat=bat
 alias cd="z"
 alias cdi="zi"
+alias docker="podman"
+alias find=fd
+alias fl="l | rg -i"
+alias l="ls -la"
+alias ldo=lazydocker
+alias les=less
+alias lg=lazygit
+alias ls="exa --icons --color=always"
+alias rgf="rg --files | rg -i"
+alias rm="rm -i"
+alias vi=nvim
+alias vim=nvim
