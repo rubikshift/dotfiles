@@ -5,7 +5,11 @@ require('lualine').setup{
     },
     sections = {
         lualine_c = {
+            { 'filename' },
             { gps.get_location, cond = gps.is_available },
         }
+    },
+    inactive_sections = {
+        lualine_c = {}
     }
 }
