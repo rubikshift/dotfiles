@@ -15,4 +15,5 @@ require('lsp.efm-general')
 require('lsp.perl')
 require('lsp.python')
 require('lsp.r')
+require('lsp.ltex-ls')
 
