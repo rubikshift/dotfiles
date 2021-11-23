@@ -64,11 +64,6 @@ return require('packer').startup({
             run = ':TSUpdate',
             config = [[require('config.nvim-treesitter')]]
         }
-        use {
-            'code-biscuits/nvim-biscuits',
-            require = 'nvim-treesitter/nvim-treesitter',
-            config = [[require('config.nvim-biscuits')]]
-        }
 
         use {
             'SmiteshP/nvim-gps',
@@ -86,6 +81,7 @@ return require('packer').startup({
             'bluz71/vim-moonfly-colors',
             config = [[require('config.vim-moonfly-colors')]]
         }
+
         use {
             'norcalli/nvim-colorizer.lua',
             config = [[require('colorizer').setup()]]
@@ -131,11 +127,20 @@ return require('packer').startup({
         use 'lewis6991/impatient.nvim'
 
         -- use 'jalvesaq/Nvim-R'
-        -- use 'metakirby5/codi.vim'
 
         use {
             'tami5/lspsaga.nvim',
             config = [[require('lspsaga').setup({})]]
+        }
+
+        use {
+            'phaazon/hop.nvim',
+            config = [[require('hop').setup({})]]
+        }
+
+        use {
+            'chentau/marks.nvim',
+            config = [[require('marks').setup({})]]
         }
 
     end,
