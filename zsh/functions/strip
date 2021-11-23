@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+function strip {
+    tr -d '\r' | tr -d '\n'
+}

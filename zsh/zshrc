@@ -14,7 +14,7 @@ bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 
 fpath=($HOME/repos/dotfiles/zsh/functions $fpath)
-autoload -Uz mvbck cpbck
+autoload -Uz mvbck cpbck strip
 
 autoload -Uz colors && colors
 
