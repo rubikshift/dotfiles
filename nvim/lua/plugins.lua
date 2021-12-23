@@ -128,10 +128,6 @@ return require('packer').startup({
         }
         use 'simrat39/symbols-outline.nvim'
 
-        use {
-            'vimwiki/vimwiki',
-            config = [[require('config.vimwiki')]]
-        }
         use 'lewis6991/impatient.nvim'
 
         -- use 'jalvesaq/Nvim-R'
