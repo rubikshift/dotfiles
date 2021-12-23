@@ -6,11 +6,6 @@ return require('packer').startup({
     function(use)
         use {'wbthomason/packer.nvim', opt = true}
 
-        use {
-            'norcalli/nvim_utils',
-            config = [[require('config.nvim_utils')]]
-        }
-
         use 'neovim/nvim-lspconfig'
 
         use {
