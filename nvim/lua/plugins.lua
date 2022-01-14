@@ -117,7 +117,6 @@ return require('packer').startup({
             'ray-x/lsp_signature.nvim',
             config = [[require('config.lsp_signature')]]
         }
-        use 'simrat39/symbols-outline.nvim'
 
         use 'lewis6991/impatient.nvim'
 

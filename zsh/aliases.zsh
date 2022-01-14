@@ -11,6 +11,7 @@ alias les=less
 alias lg=lazygit
 alias ls="exa --icons --color=always"
 alias mail=neomutt
+alias r="python3 -m radian"
 alias rgf="rg --files | rg -i"
 alias rm="rm -i"
 alias vi=nvim
