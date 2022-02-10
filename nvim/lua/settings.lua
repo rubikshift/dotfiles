@@ -55,7 +55,10 @@ M.load_options = function()
   vim.api.nvim_command([[autocmd FileType text setlocal spell]])
   vim.api.nvim_command([[autocmd FileType gitcommit setlocal spell]])
   vim.api.nvim_command([[autocmd FileType vimwiki setlocal spell]])
+  vim.api.nvim_command([[autocmd FileType markdown set colorcolumn=75]])
+  vim.api.nvim_command([[autocmd FileType text set colorcolumn=75]])
+  vim.api.nvim_command([[autocmd FileType gitcommit set colorcolumn=75]])
+  vim.api.nvim_command([[autocmd FileType vimwiki set colorcolumn=75]])
 end
 
--- vim.g.indent_setColors=0
 return M
