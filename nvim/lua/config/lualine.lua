@@ -1,7 +1,7 @@
 local gps = require('nvim-gps')
 require('lualine').setup{
     options = {
-        theme = 'moonfly'
+        theme = 'github'
     },
     sections = {
         lualine_c = {
