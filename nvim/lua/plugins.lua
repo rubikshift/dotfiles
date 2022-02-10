@@ -73,8 +73,8 @@ return require('packer').startup({
         }
 
         use {
-            'bluz71/vim-moonfly-colors',
-            config = [[require('config.vim-moonfly-colors')]]
+            "projekt0n/github-nvim-theme",
+            config = [[require('config.theme')]]
         }
 
         use {
@@ -128,14 +128,13 @@ return require('packer').startup({
         }
 
         use {
-            'phaazon/hop.nvim',
-            config = [[require('hop').setup({})]]
+            'jose-elias-alvarez/null-ls.nvim',
+            requires = {
+                'nvim-lua/plenary.nvim'
+            },
+            config = [[require('config.null-ls')]]
         }
 
-        use {
-            'chentau/marks.nvim',
-            config = [[require('marks').setup({})]]
-        }
 
     end,
 
