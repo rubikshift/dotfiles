@@ -11,9 +11,7 @@ require('plugins')
 
 require('lsp.cmake')
 require('lsp.cpp')
-require('lsp.efm-general')
-require('lsp.perl')
 require('lsp.python')
 require('lsp.r')
 require('lsp.ltex-ls')
-
+require('lsp.texlab')
