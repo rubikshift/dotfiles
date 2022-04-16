@@ -59,6 +59,9 @@ M.load_options = function()
   vim.api.nvim_command([[autocmd FileType text set colorcolumn=75]])
   vim.api.nvim_command([[autocmd FileType gitcommit set colorcolumn=75]])
   vim.api.nvim_command([[autocmd FileType vimwiki set colorcolumn=75]])
+
+  -- nvim tree auto close
+  vim.api.nvim_command([[autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif]])
 end
 
 return M

@@ -9,6 +9,11 @@ return require('packer').startup({
         use 'neovim/nvim-lspconfig'
 
         use {
+            "projekt0n/github-nvim-theme",
+            config = [[require('config.theme')]]
+        }
+
+        use {
             'onsails/lspkind-nvim',
             config = [[require('lspkind').init({})]]
         }
@@ -73,11 +78,6 @@ return require('packer').startup({
         }
 
         use {
-            "projekt0n/github-nvim-theme",
-            config = [[require('config.theme')]]
-        }
-
-        use {
             'norcalli/nvim-colorizer.lua',
             config = [[require('colorizer').setup()]]
         }
@@ -134,6 +134,8 @@ return require('packer').startup({
             },
             config = [[require('config.null-ls')]]
         }
+
+        use 'nkakouros-original/numbers.nvim'
 
 
     end,

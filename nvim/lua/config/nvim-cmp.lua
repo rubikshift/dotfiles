@@ -32,7 +32,7 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'luasnip' },
         { name = 'treesiter' },
-        { name = 'buffer', keyword_length=5 },
+        { name = 'buffer', keyword_length=3 },
         { name = 'path' },
         -- { name = 'cmdline' }
     },
@@ -46,12 +46,14 @@ cmp.setup({
 })
 
 cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
     sources = {
         { name = 'buffer', keyword_length=3 }
     }
 })
 
 cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
     sources = {
         { name = 'path' },
         { name = 'cmdline' }
