@@ -6,7 +6,6 @@ alias docker=podman
 alias find=fd
 alias fl="l | rg -i"
 alias l="ls -la"
-alias ldo=lazydocker
 alias les=less
 alias lg=lazygit
 alias ls="exa --icons --color=always"
@@ -14,5 +13,6 @@ alias mail=neomutt
 alias r="python3 -m radian"
 alias rgf="rg --files | rg -i"
 alias rm="rm -i"
+alias tx=tmuxinator
 alias vi=nvim
 alias vim=nvim
