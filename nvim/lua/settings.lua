@@ -22,7 +22,7 @@ M.load_options = function()
     number = true,
     pumheight = 10,
     relativenumber = true,
-    scrolloff = 8, --idk
+    scrolloff = 8, --scroll offset, will start scrolling at this distance to the end of the screen
     sidescrolloff = 8,
     shiftwidth = 4,
     showmode = false,
@@ -55,13 +55,17 @@ M.load_options = function()
   vim.api.nvim_command([[autocmd FileType text setlocal spell]])
   vim.api.nvim_command([[autocmd FileType gitcommit setlocal spell]])
   vim.api.nvim_command([[autocmd FileType vimwiki setlocal spell]])
-  vim.api.nvim_command([[autocmd FileType markdown set colorcolumn=75]])
-  vim.api.nvim_command([[autocmd FileType text set colorcolumn=75]])
+
+  -- color column for gitcommits
   vim.api.nvim_command([[autocmd FileType gitcommit set colorcolumn=75]])
-  vim.api.nvim_command([[autocmd FileType vimwiki set colorcolumn=75]])
 
   -- nvim tree auto close
   vim.api.nvim_command([[autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif]])
+
+  -- formatting text files
+  vim.api.nvim_command([[autocmd FileType markdown setlocal textwidth=80]])
+  vim.api.nvim_command([[autocmd FileType text setlocal textwidth=80]])
+  vim.api.nvim_command([[autocmd FileType gitcommit setlocal textwidth=75]])
 end
 
 return M
