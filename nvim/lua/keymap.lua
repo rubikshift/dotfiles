@@ -38,5 +38,5 @@ vim.api.nvim_set_keymap('n', '<leader>r', '<cmd>Lspsaga rename<CR>', { noremap =
 vim.api.nvim_set_keymap('n', '<leader>s', '<cmd>Lspsaga signature_help<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>a', '<cmd>Lspsaga code_action<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>d', '<cmd>Lspsaga show_line_diagnostics<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>f', '<cmd>lua vim.lsp.buf.format{async = true}<CR>', { noremap = true, silent = true })
 
