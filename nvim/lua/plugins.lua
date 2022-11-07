@@ -17,18 +17,27 @@ return require('packer').startup({
             'onsails/lspkind-nvim',
             config = [[require('lspkind').init({})]]
         }
+
         use {
-            'hrsh7th/nvim-cmp',
+            'ms-jpq/coq_nvim',
             requires = {
-                'hrsh7th/cmp-nvim-lsp',
-                'hrsh7th/cmp-buffer',
-                'hrsh7th/cmp-path',
-                'hrsh7th/cmp-cmdline',
-                'saadparwaiz1/cmp_luasnip',
-                'L3MON4D3/LuaSnip',
+                'ms-jpq/coq.artifacts',
+                'ms-jpq/coq.thirdparty',
             },
-            config = [[require('config.nvim-cmp')]]
+            config = [[require('config.coq')]]
         }
+        -- use {
+        --     'hrsh7th/nvim-cmp',
+        --     requires = {
+        --         'hrsh7th/cmp-nvim-lsp',
+        --         'hrsh7th/cmp-buffer',
+        --         'hrsh7th/cmp-path',
+        --         'hrsh7th/cmp-cmdline',
+        --         'saadparwaiz1/cmp_luasnip',
+        --         'L3MON4D3/LuaSnip',
+        --     },
+        --     config = [[require('config.nvim-cmp')]]
+        -- }
 
         use {
             'RishabhRD/nvim-lsputils',
