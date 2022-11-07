@@ -25,9 +25,6 @@ zstyle ':completion:*' cache-path "$HOME/.zsh_cache"
 # aliases
 source "$HOME/repos/dotfiles/zsh/aliases.zsh"
 
-# zoxide
-source "$HOME/repos/dotfiles/zsh/zoxide.zsh"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # prompt

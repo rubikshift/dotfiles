@@ -1,14 +1,12 @@
 alias brewup="brew update && brew upgrade; brew doctor"
 alias cat=bat
-alias cd=z
-alias cdi=zi
 alias docker=podman
 alias find=fd
 alias fl="l | rg -i"
-alias l="ls -la"
+alias l="ls -lah"
 alias les=less
 alias lg=lazygit
-alias ls="exa --icons --color=always"
+alias ls="exa --color=always"
 alias mail=neomutt
 alias r="python3 -m radian"
 alias rgf="rg --files | rg -i"
