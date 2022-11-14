@@ -66,6 +66,11 @@ M.load_options = function()
   vim.api.nvim_command([[autocmd FileType markdown setlocal textwidth=80]])
   vim.api.nvim_command([[autocmd FileType text setlocal textwidth=80]])
   vim.api.nvim_command([[autocmd FileType gitcommit setlocal textwidth=75]])
+
+  -- markdown formatting
+  vim.api.nvim_command([[autocmd FileType markdown setlocal tabstop=4]])
+  vim.api.nvim_command([[autocmd FileType markdown setlocal noexpandtab]])
+  vim.api.nvim_command([[autocmd FileType markdown %retab!]])
 end
 
 return M
