@@ -132,11 +132,6 @@ return require('packer').startup({
         -- use 'jalvesaq/Nvim-R'
 
         use {
-            'tami5/lspsaga.nvim',
-            config = [[require('lspsaga').setup({})]]
-        }
-
-        use {
             'jose-elias-alvarez/null-ls.nvim',
             requires = {
                 'nvim-lua/plenary.nvim'
