@@ -1,5 +1,5 @@
 vim.g.coq_settings = {
-    auto_start = true,
+    auto_start = 'shut-up',
 }
 
 require("coq_3p") {
