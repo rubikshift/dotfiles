@@ -1,4 +1,8 @@
 require('lsp_signature').setup({
-    hint_enable= false,
+    bind = true,
+    handler_opts = {
+        border = "rounded",
+    },
+    -- hint_enable= false,
 })
 
