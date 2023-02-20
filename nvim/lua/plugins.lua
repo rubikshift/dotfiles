@@ -18,26 +18,26 @@ return require('packer').startup({
             config = [[require('lspkind').init({})]]
         }
 
-        use {
-            'ms-jpq/coq_nvim',
-            requires = {
-                'ms-jpq/coq.artifacts',
-                'ms-jpq/coq.thirdparty',
-            },
-            config = [[require('config.coq')]]
-        }
         -- use {
-        --     'hrsh7th/nvim-cmp',
+        --     'ms-jpq/coq_nvim',
         --     requires = {
-        --         'hrsh7th/cmp-nvim-lsp',
-        --         'hrsh7th/cmp-buffer',
-        --         'hrsh7th/cmp-path',
-        --         'hrsh7th/cmp-cmdline',
-        --         'saadparwaiz1/cmp_luasnip',
-        --         'L3MON4D3/LuaSnip',
+        --         'ms-jpq/coq.artifacts',
+        --         'ms-jpq/coq.thirdparty',
         --     },
-        --     config = [[require('config.nvim-cmp')]]
+        --     config = [[require('config.coq')]]
         -- }
+        use {
+            'hrsh7th/nvim-cmp',
+            requires = {
+                'hrsh7th/cmp-nvim-lsp',
+                'hrsh7th/cmp-buffer',
+                'hrsh7th/cmp-path',
+                'hrsh7th/cmp-cmdline',
+                'saadparwaiz1/cmp_luasnip',
+                'L3MON4D3/LuaSnip',
+            },
+            config = [[require('config.nvim-cmp')]]
+        }
 
         use {
             'RishabhRD/nvim-lsputils',
@@ -140,8 +140,28 @@ return require('packer').startup({
         }
 
         use 'nkakouros-original/numbers.nvim'
+        use {
+            'kdheepak/lazygit.nvim',
+        }
 
+        use {
+            'ckipp01/nvim-jenkinsfile-linter',
+            requires = {
+                "nvim-lua/plenary.nvim",
+                "martinda/Jenkinsfile-vim-syntax"
+            }
+        }
+        use 'vim-scripts/groovy.vim'
 
+        use {
+            'folke/which-key.nvim',
+            config = [[require('config.which-key')]]
+        }
+
+        use {
+            'gorbit99/codewindow.nvim',
+            config = [[require('config.codewindow')]]
+        }
     end,
 
     config = {
