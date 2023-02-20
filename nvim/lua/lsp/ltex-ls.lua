@@ -1,5 +1,5 @@
 require"lspconfig".ltex.setup{
-    capabilities = require('coq').lsp_ensure_capabilities(vim.lsp.protocol.make_client_capabilities()),
+    capabilities = require('cmp_nvim_lsp').default_capabilities(),
     filetypes = { 'bib', 'markdown', 'org', 'plaintex', 'rst', 'rnoweb', 'tex', 'vimwiki', 'gitcommit' },
     settings = {
         ltex = {
