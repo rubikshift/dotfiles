@@ -1,5 +1,7 @@
 require'nvim-treesitter.configs'.setup {
-    -- ensure_installed = "maintained",
+    ensure_installed = {"python", "cpp", "groovy"},
+    auto_install = true,
+    prefer_git = true,
     highlight = {
         enable = true,
     },
@@ -8,5 +10,6 @@ require'nvim-treesitter.configs'.setup {
         highlight_definitions = { enable = true },
         smart_rename = { enable = true },
         navigation = { enable = true },
-    }
+    },
+    additional_vim_regex_highlighting = false
 }
