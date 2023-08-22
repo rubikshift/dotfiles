@@ -18,6 +18,11 @@ return require('packer').startup({
             config = [[require('lspkind').init({})]]
         }
 
+        use {
+            'freddiehaddad/feline.nvim',
+            config = [[require('feline').setup()]]
+        }
+
         -- use {
         --     'ms-jpq/coq_nvim',
         --     requires = {
@@ -46,16 +51,14 @@ return require('packer').startup({
         }
 
         use {
-            'hoob3rt/lualine.nvim',
-            require = {'SmiteshP/nvim-gps'},
-            config = [[require('config.lualine')]]
-        }
-
-        use {
             'nvim-telescope/telescope.nvim',
             requires = {
                 {'nvim-lua/popup.nvim'},
-                {'nvim-lua/plenary.nvim'}
+                {'nvim-lua/plenary.nvim'},
+                {
+                    'nvim-telescope/telescope-fzf-native.nvim',
+                    run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build'
+                }
             }
         }
 
@@ -72,12 +75,6 @@ return require('packer').startup({
             require = {'nvim-treesitter/nvim-treesitter-refactor'},
             run = ':TSUpdate',
             config = [[require('config.nvim-treesitter')]]
-        }
-
-        use {
-            'SmiteshP/nvim-gps',
-            requires = 'nvim-treesitter/nvim-treesitter',
-            config = [[require('nvim-gps').setup()]]
         }
 
         use {
@@ -162,6 +159,14 @@ return require('packer').startup({
             'gorbit99/codewindow.nvim',
             config = [[require('config.codewindow')]]
         }
+
+        use {
+          "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
+          config = function()
+            require("lsp_lines").setup()
+          end,
+        }
+
     end,
 
     config = {

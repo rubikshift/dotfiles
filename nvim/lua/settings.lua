@@ -47,6 +47,10 @@ M.load_options = function()
     vim.opt[k] = v
   end
 
+  vim.diagnostic.config({
+    virtual_text = false,
+  })
+
   -- remove trailing whitespace on save
   vim.api.nvim_command([[autocmd BufWritePre * :%s/\s\+$//e]])
 
