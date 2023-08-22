@@ -1,5 +1,14 @@
 require("github-theme").setup({
-  theme_style = "dark",
-  function_style = "italic",
-  sidebars = {"qf", "vista_kind", "terminal", "packer"},
+  options = {
+    styles = {
+      functions = "italic"
+    },
+    darken = {
+      sidebars = {
+        list = {"qf", "vista_kind", "terminal", "packer"},
+      }
+    }
+  },
 })
+
+vim.cmd('colorscheme github_dark')
