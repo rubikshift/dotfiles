@@ -61,7 +61,7 @@ M.load_options = function()
   vim.api.nvim_command([[autocmd FileType vimwiki setlocal spell]])
 
   -- color column for gitcommits
-  vim.api.nvim_command([[autocmd FileType gitcommit set colorcolumn=75]])
+  vim.api.nvim_command([[autocmd FileType gitcommit set colorcolumn=72]])
 
   -- nvim tree auto close
   vim.api.nvim_command([[autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif]])
@@ -69,7 +69,7 @@ M.load_options = function()
   -- formatting text files
   vim.api.nvim_command([[autocmd FileType markdown setlocal textwidth=80]])
   vim.api.nvim_command([[autocmd FileType text setlocal textwidth=80]])
-  vim.api.nvim_command([[autocmd FileType gitcommit setlocal textwidth=75]])
+  vim.api.nvim_command([[autocmd FileType gitcommit setlocal textwidth=72]])
 
   -- markdown formatting
   vim.api.nvim_command([[autocmd FileType markdown setlocal tabstop=4]])
