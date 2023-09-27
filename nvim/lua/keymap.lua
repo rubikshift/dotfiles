@@ -41,6 +41,7 @@ vim.keymap.set('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>', { noremap 
 vim.keymap.set('n', '<leader>s', '<cmd>lua vim.lsp.buf.signature_help()<CR>', { noremap = true, silent = true, desc="show signature" })
 vim.keymap.set('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, silent = true, desc="quick fix" })
 vim.keymap.set('n', '<leader>d', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', { noremap = true, silent = true, desc="show warning" })
+vim.keymap.set('n', '<leader>o', '<cmd>SymbolsOutline<CR>', { noremap = true, silent = true, desc="open outline" })
 -- vim.keymap.set('n', 'K', '<cmd>Lspsaga hover_doc<CR>', { noremap = true, silent = true })
 -- vim.keymap.set('n', 'g[', '<cmd>Lspsaga diagnostic_jump_prev<CR>', { noremap = true, silent = true })
 -- vim.keymap.set('n', 'g]', '<cmd>Lspsaga diagnostic_jump_next<CR>', { noremap = true, silent = true })

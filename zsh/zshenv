@@ -7,7 +7,8 @@ export EDITOR="$VISUAL"
 
 [[ $OSTYPE == darwin* ]] && export BROWSER='open'
 
-export MANPAGER='nvim -c Man!'
+# export PAGER="most"
+# export MANPAGER="moar --style xcode --no-linenumbers --no-statusbar"
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=1000000
 export SAVEHIST=1000000

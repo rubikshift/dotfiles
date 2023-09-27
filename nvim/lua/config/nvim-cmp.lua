@@ -16,6 +16,18 @@ cmp.setup({
     completion = {
         completeopt = 'menu,menuone,noinsert',
     },
+    sorting = {
+        comparators = {
+            cmp.config.compare.offset,
+            cmp.config.compare.exact,
+            cmp.config.compare.score,
+            require "cmp-under-comparator".under,
+            cmp.config.compare.kind,
+            cmp.config.compare.sort_text,
+            cmp.config.compare.length,
+            cmp.config.compare.order,
+        },
+    },
     mapping = {
         ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(), {'i', 'c'}),
         ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(), {'i', 'c'}),
@@ -30,7 +42,7 @@ cmp.setup({
     },
     sources = {
         { name = 'nvim_lsp' },
-        { name = 'luasnip' },
+        { name = 'vsnip' },
         { name = 'treesiter' },
         { name = 'buffer', keyword_length=3 },
         { name = 'path' },

@@ -38,6 +38,7 @@ return require('packer').startup({
                 'hrsh7th/cmp-buffer',
                 'hrsh7th/cmp-path',
                 'hrsh7th/cmp-cmdline',
+                'lukas-reineke/cmp-under-comparator',
                 'saadparwaiz1/cmp_luasnip',
                 'L3MON4D3/LuaSnip',
             },
@@ -162,9 +163,12 @@ return require('packer').startup({
 
         use {
           "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-          config = function()
-            require("lsp_lines").setup()
-          end,
+          config = [[ require("lsp_lines").setup()]]
+        }
+
+        use {
+            'simrat39/symbols-outline.nvim',
+            config = [[require("symbols-outline").setup()]]
         }
 
     end,
