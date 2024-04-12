@@ -1,3 +1,4 @@
 # compiled packages
 nvim/lua/packer_compiled.lua
+nvim/lazy-lock.json
 

@@ -1,5 +1,5 @@
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = {"python", "cpp", "groovy"},
+    ensure_installed = {"python"},
     auto_install = true,
     prefer_git = true,
     highlight = {
