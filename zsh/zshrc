@@ -1,9 +1,17 @@
-setopt CORRECT
 # setopt CORRECT_ALL
-setopt APPEND_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
-setopt MENU_COMPLETE
+setopt AUTO_CD
+setopt BANG_HIST
+setopt CORRECT
 setopt EXTENDED_GLOB
+setopt EXTENDED_HISTORY
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_FCNTL_LOCK
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
+setopt INTERACTIVE_COMMENTS
+setopt MENU_COMPLETE
+setopt SHARE_HISTORY
 unsetopt BEEP
 
 # vim keymap
@@ -13,7 +21,7 @@ bindkey -v
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 
-fpath=($HOME/repos/dotfiles/zsh/functions $fpath)
+fpath=($XDG_CONFIG_HOME/zsh/functions $fpath)
 autoload -Uz mvbck cpbck strip
 
 autoload -Uz colors && colors
@@ -23,9 +31,10 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$HOME/.zsh_cache"
 
 # aliases
-source "$HOME/repos/dotfiles/zsh/aliases.zsh"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source $XDG_CONFIG_HOME/zsh/aliases.zsh
 
 # prompt
-source "$HOME/repos/dotfiles/zsh/prompt.zsh"
+source $XDG_CONFIG_HOME/zsh/prompt.zsh
+
+#plugins
+source $XDG_CONFIG_HOME/zsh/plugins.zsh

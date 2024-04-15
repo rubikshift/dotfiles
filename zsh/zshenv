@@ -1,14 +1,22 @@
 # export PATH="/usr/local/opt/python/libexec/bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:/usr/bin:$PATH"
-export PATH="$PATH:/usr/local/opt/llvm/bin"
+[[ $OSTYPE == darwin* ]] && export PATH="$PATH:/usr/local/opt/llvm/bin"
+export PATH="$HOME/.local/bin:$HOME/.fzf/bin:$HOME/.local/go/bin:$HOME/.local/share/gem/bin:$HOME/.local/share/cargo/bin:$PATH"
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export VISUAL=nvim
 export EDITOR="$VISUAL"
+export TERM=xterm-256color
+export STORAGE_DRIVER=overlay
+export CARGO_HOME=$HOME/.local/share/cargo
+export GEM_HOME=$HOME/.local/share/gem
 
 [[ $OSTYPE == darwin* ]] && export BROWSER='open'
 
-# export PAGER="most"
+export PAGER="less"
 # export MANPAGER="moar --style xcode --no-linenumbers --no-statusbar"
 export HISTFILE="$HOME/.zsh_history"
-export HISTSIZE=1000000
-export SAVEHIST=1000000
+export HISTSIZE=999999999
+export SAVEHIST=$HISTSIZE
+export XDG_CONFIG_HOME=$HOME/.config/
+
+export skip_global_compinit=1
