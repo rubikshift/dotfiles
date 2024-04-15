@@ -1,0 +1,5 @@
+[wsl2]
+networkingMode=mirrored
+autoProxy=true
+processors=8
+memory=8GB
