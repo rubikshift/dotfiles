@@ -21,7 +21,7 @@ bindkey -v
 bindkey '^A' beginning-of-line
 bindkey '^E' end-of-line
 
-fpath=($XDG_CONFIG_HOME/zsh/functions $fpath)
+fpath=(${XDG_CONFIG_HOME:-$HOME/.config}/zsh/functions $fpath)
 autoload -Uz mvbck cpbck strip
 
 autoload -Uz colors && colors
@@ -31,10 +31,10 @@ zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path "$HOME/.zsh_cache"
 
 # aliases
-source $XDG_CONFIG_HOME/zsh/aliases.zsh
+source ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/aliases.zsh
 
 # prompt
-source $XDG_CONFIG_HOME/zsh/prompt.zsh
+source ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/prompt.zsh
 
 #plugins
-source $XDG_CONFIG_HOME/zsh/plugins.zsh
+source ${XDG_CONFIG_HOME:-$HOME/.config}/zsh/plugins.zsh
