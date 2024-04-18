@@ -1,7 +1,7 @@
 autoload -Uz compinit
 
 # completions
-fpath=("$HOME/repos/dotfiles/zsh/zsh-completions/src" $fpath)
+fpath=("${XDG_CONFIG_HOME:-$HOME/.config}/zsh/zsh-completions/src" $fpath)
 zmodload zsh/complist
 _comp_options+=(globdots)
 
