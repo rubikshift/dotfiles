@@ -10,6 +10,7 @@ export STORAGE_DRIVER=overlay
 export CARGO_HOME=$HOME/.local/share/cargo
 export GEM_HOME=$HOME/.local/share/gem
 export GOPATH=$HOME/.local/share/go
+export TZ=Europe/Warsaw
 
 [[ $OSTYPE == darwin* ]] && export BROWSER='open'
 
