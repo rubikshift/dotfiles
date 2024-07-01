@@ -1,0 +1,11 @@
+- name: Setup OS
+  hosts: localhost
+  environment:
+    USER: "{{ lookup('ansible.builtin.env', 'USER') }}"
+    HOME: "{{ lookup('ansible.builtin.env', 'HOME') }}"
+    XDG_CONFIG_HOME: "{{ lookup('ansible.builtin.env', 'XDG_CONFIG_HOME', default='$HOME/config/') }}"
+  roles:
+    # - role: system
+    - role: fish
+    - role: tmux
+    - role: nvim
