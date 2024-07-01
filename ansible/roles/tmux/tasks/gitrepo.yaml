@@ -1,0 +1,11 @@
+- name: plugins
+  ansible.builtin.git:
+    repo: https://github.com/tmux-plugins/tpm
+    dest: $HOME/.tmux/plugins/tpm
+    depth: 1
+
+- name: themes
+  ansible.builtin.git:
+    repo: https://github.com/jimeh/tmux-themepack.git
+    dest: $HOME/.tmux-themepack
+    depth: 1

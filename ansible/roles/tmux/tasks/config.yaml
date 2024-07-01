@@ -1,0 +1,9 @@
+- name: Copy tmux config
+  ansible.builtin.file:
+    dest: $XDG_CONFIG_HOME/tmux
+    state: directory
+
+- name: Deploy tmux config
+  ansible.builtin.copy:
+    src: config/tmux.conf
+    dest: $XDG_CONFIG_HOME/tmux/tmux.conf
