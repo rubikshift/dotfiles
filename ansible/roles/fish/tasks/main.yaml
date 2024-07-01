@@ -1,0 +1,8 @@
+- name: Set default shell
+  ansible.builtin.shell:
+    cmd: /bin/bash -c 'chsh -s $(command -v fish) $USER'
+
+- name: Deploy Config
+  ansible.builtin.copy:
+    src: config/
+    dest: $XDG_CONFIG_HOME/fish/conf.d/
