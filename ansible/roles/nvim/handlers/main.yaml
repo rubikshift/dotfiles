@@ -1,0 +1,4 @@
+- name: Sync Nvim
+  ansible.builtin.shell:
+    cmd: nvim --headless "+Lazy! sync" +qa
+  listen: "Sync Nvim"

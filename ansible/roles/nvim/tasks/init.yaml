@@ -1,0 +1,7 @@
+- name: Deploy config
+  ansible.builtin.copy:
+    src: config/
+    dest: $XDG_CONFIG_HOME/nvim/
+  notify:
+    - Sync Nvim
+

@@ -1,0 +1,11 @@
+- name: Install prettier
+  community.general.npm:
+    name: prettier
+    global: true
+    state: latest
+
+- name: Install Yaml lsp
+  community.general.npm:
+    name: yaml-language-server
+    global: true
+    state: latest

@@ -163,4 +163,14 @@ require('lazy').setup({
         'simrat39/symbols-outline.nvim',
         opts = {},
     },
+    {
+      'stevearc/conform.nvim',
+      opts = {
+          formatters_by_ft = {
+            lua = { "stylua" },
+            python = { "isort", "black" },
+            yaml = { "yq" }
+          },
+      },
+    }
 })
