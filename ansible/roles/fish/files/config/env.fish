@@ -5,7 +5,7 @@ set -gx LC_ALL en_US.UTF-8
 set -gx LC_CTYPE en_US.UTF-8
 set -gx VISUAL nvim
 set -gx EDITOR "$VISUAL"
-set -gx TERM xterm-256color
+# set -gx TERM xterm-256color
 set -gx STORAGE_DRIVER overlay
 set -gx CARGO_HOME $HOME/.local/share/cargo
 set -gx GEM_HOME $HOME/.local/share/gem
