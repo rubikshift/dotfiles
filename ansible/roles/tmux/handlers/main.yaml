@@ -1,5 +1,4 @@
 - name: Source tmux.conf
   ansible.builtin.shell:
     cmd: tmux source $XDG_CONFIG_HOME/tmux/tmux.conf
-  listen: "Sync tmux"
-
+  listen: Sync tmux

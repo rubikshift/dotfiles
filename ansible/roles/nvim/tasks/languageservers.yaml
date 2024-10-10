@@ -3,7 +3,6 @@
     name: prettier
     global: true
     state: latest
-
 - name: Install Yaml lsp
   community.general.npm:
     name: yaml-language-server

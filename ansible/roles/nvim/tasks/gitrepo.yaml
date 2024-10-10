@@ -1,8 +1,11 @@
+- name: Cleanup folke/lazy.git
+  ansible.builtin.file:
+    path: $HOME/.local/share/nvim/lazy
+    state: absent
 - name: Install folke/lazy.git
   ansible.builtin.git:
     repo: https://github.com/folke/lazy.nvim.git
     version: stable
-    depth: 1
     update: yes
     dest: $HOME/.local/share/nvim/lazy
   notify:

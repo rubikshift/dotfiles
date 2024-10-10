@@ -1,6 +1,13 @@
 -- inspired by https://github.com/ChristianChiarulli/nvcode
 -- other cool stuff https://github.com/rockerBOO/awesome-neovim#treesitter-support
 
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	vim.fn.system({
