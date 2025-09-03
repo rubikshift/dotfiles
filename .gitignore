@@ -1,4 +1,13 @@
 # compiled packages
-nvim/lua/packer_compiled.lua
 nvim/lazy-lock.json
 
+#tmux plugins
+tmux/plugins
+
+#google related configs
+*google*
+
+#fish plugins
+*fisher*
+fish/fish_plugins
+fish/themes
