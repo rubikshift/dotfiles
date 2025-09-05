@@ -5,6 +5,7 @@ return {
 			"nvim-lua/popup.nvim",
 			"nvim-lua/plenary.nvim",
 			"smartpde/telescope-recent-files",
+			"nvim-telescope/telescope-file-browser.nvim",
 			{
 				"nvim-telescope/telescope-fzf-native.nvim",
 				build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
@@ -15,6 +16,13 @@ return {
 			{ "<C-p>", "<cmd>Telescope find_files<cr>", noremap = true, desc = "search file" },
 			-- CTRL+F to 'find' things in the files
 			{ "<C-f>", "<cmd>Telescope live_grep<cr>", noremap = true, desc = "find in files" },
+			{ "<leader>tf", "<cmd>Telescope file_browser<CR>", desc = "File browser" },
+			-- CTRL+N for file browser -- already used to it
+			{
+				"<C-n>",
+				"<cmd>Telescope file_browser path=%:p:h select_buffer=true<CR>",
+				desc = "File browser",
+			},
 			{ "<leader>b", "<cmd>Telescope buffers<cr>", noremap = true, desc = "buffers" },
 		},
 		config = function()
@@ -37,9 +45,13 @@ return {
 					recent_files = {
 						stat_files = false,
 					},
+					file_browser = {
+						hijack_netrw = true,
+					},
 				},
 			})
 			require("telescope").load_extension("fzf")
+			require("telescope").load_extension("file_browser")
 			require("telescope").load_extension("recent_files")
 			require("telescope").load_extension("notify")
 		end,

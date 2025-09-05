@@ -1,5 +1,4 @@
-require("lspconfig").yamlls.setup({
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+vim.lsp.config("yamlls", {
 	settings = {
 		yaml = {
 			format = {
@@ -11,3 +10,4 @@ require("lspconfig").yamlls.setup({
 		},
 	},
 })
+vim.lsp.enable("yamlls")

@@ -104,7 +104,7 @@ return {
 			mode = { "n", "t" },
 		},
 		{
-			"<c-`>",
+			"<c-§>",
 			function()
 				Snacks.terminal.toggle()
 			end,

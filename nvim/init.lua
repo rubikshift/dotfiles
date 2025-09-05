@@ -17,6 +17,7 @@ vim.opt.rtp:prepend(lazypath)
 require("settings")
 require("keymap")
 require("lazy_config")
+require("lsp_config")
 require("autocmd")
 
 vim.cmd.colorscheme("catppuccin")

@@ -2,11 +2,7 @@ return {
 	"neovim/nvim-lspconfig",
 	"onsails/lspkind.nvim",
 	"zivyangll/git-blame.vim",
-	-- "airblade/vim-rooter",
-	-- "windwp/nvim-autopairs",
-	-- "tpope/vim-surround",
 	"tpope/vim-repeat",
-	-- "tpope/vim-sleuth",
 	"smartpde/neoscopes",
 	{
 		"norcalli/nvim-colorizer.lua",
@@ -30,6 +26,7 @@ return {
 		dependencies = "rcarriga/nvim-notify", -- optional
 		opts = {}, -- required even with default settings, since it calls `setup()`
 	},
+	"nvim-tree/nvim-web-devicons",
 
 	-- {
 	-- 	"lukas-reineke/indent-blankline.nvim",
@@ -38,6 +35,10 @@ return {
 	-- 	---@module "ibl"
 	-- 	---@type ibl.config
 	-- },
+	-- "tpope/vim-sleuth",
+	-- "airblade/vim-rooter",
+	-- "windwp/nvim-autopairs",
+	-- "tpope/vim-surround",
 	-- 'vim-scripts/groovy.vim',
-	-- use 'tpope/vim-fugitive'
+	-- 'tpope/vim-fugitive'
 }

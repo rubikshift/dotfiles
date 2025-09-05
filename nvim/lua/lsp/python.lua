@@ -1,5 +1,4 @@
-require("lspconfig").pylsp.setup({
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+vim.lsp.cofnig("pylsp", {
 	pylsp = {
 		plugins = {
 			pycodestyle = {
@@ -8,3 +7,4 @@ require("lspconfig").pylsp.setup({
 		},
 	},
 })
+vim.lsp.enable("pylsp")

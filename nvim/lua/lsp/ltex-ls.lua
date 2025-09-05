@@ -1,5 +1,4 @@
-require("lspconfig").ltex.setup({
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
+vim.lsp.config("ltex", {
 	filetypes = { "bib", "markdown", "org", "plaintex", "rst", "rnoweb", "tex", "vimwiki", "gitcommit" },
 	settings = {
 		ltex = {
