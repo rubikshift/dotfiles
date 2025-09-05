@@ -25,6 +25,11 @@ return {
 		lazy = false,
 		opts = {},
 	},
+	{
+		"chrisgrieser/nvim-recorder",
+		dependencies = "rcarriga/nvim-notify", -- optional
+		opts = {}, -- required even with default settings, since it calls `setup()`
+	},
 
 	-- {
 	-- 	"lukas-reineke/indent-blankline.nvim",

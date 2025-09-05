@@ -9,7 +9,11 @@ return {
 		"hrsh7th/cmp-cmdline",
 		"lukas-reineke/cmp-under-comparator",
 		"saadparwaiz1/cmp_luasnip",
-		"L3MON4D3/LuaSnip",
+		{
+			"L3MON4D3/LuaSnip",
+			version = "v2.*",
+			build = "make install_jsregexp",
+		},
 	},
 	config = function()
 		-- luasnip setup
@@ -61,22 +65,22 @@ return {
 				end, { "i", "s", "c" }),
 				["<C-d>"] = cmp.mapping(cmp.mapping.scroll_docs(-4), { "i", "c" }),
 				["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(4), { "i", "c" }),
-				["<C-Space>"] = cmp.mapping(cmp.mapping.complete()),
+				["<C-space>"] = cmp.mapping(cmp.mapping.complete()),
 				["<C-e>"] = cmp.mapping(cmp.mapping.abort()),
 				["<CR>"] = cmp.mapping({
 					i = function(fallback)
 						if cmp.visible() and cmp.get_active_entry() then
-							-- if luasnip.expandable() then
-							-- 	luasnip.expand()
-							-- else
-							cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
-							-- end
+							if luasnip.expandable() then
+								luasnip.expand()
+							else
+								cmp.confirm({ select = false })
+							end
 						else
 							fallback()
 						end
 					end,
 					s = cmp.mapping.confirm({ select = true }),
-					c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+					-- c = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
 				}),
 
 				-- ["<CR>"] = cmp.mapping(function(fallback)

@@ -10,8 +10,9 @@ return {
 		require("mini.jump").setup()
 		require("mini.pairs").setup()
 		require("mini.starter").setup()
-		require("mini.tabline").setup()
 		require("mini.surround").setup()
+		require("mini.tabline").setup()
+		require("mini.trailspace").setup()
 		local minimap = require("mini.map")
 		minimap.setup({
 			integrations = {
@@ -26,5 +27,7 @@ return {
 	end,
 	keys = {
 		{ "<C-m>", "<cmd>lua MiniMap.toggle()<CR>", desc = "Minimap toggle" },
+		{ "<space><space>", "<cmd>lua MiniTrailspace.trim()<CR>", desc = "Trim trailing whitespaces" },
+		{ "<space><CR>", "<cmd>lua MiniTrailspace.trim_last_lines()<CR>", desc = "Trim empty last lines" },
 	},
 }
