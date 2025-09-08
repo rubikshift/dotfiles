@@ -32,18 +32,18 @@ return {
 			-- completion = {
 			-- 	completeopt = "menu,menuone,noinsert",
 			-- },
-			sorting = {
-				comparators = {
-					cmp.config.compare.offset,
-					cmp.config.compare.exact,
-					cmp.config.compare.score,
-					require("cmp-under-comparator").under,
-					cmp.config.compare.kind,
-					cmp.config.compare.sort_text,
-					cmp.config.compare.length,
-					cmp.config.compare.order,
-				},
-			},
+			-- sorting = {
+			-- 	comparators = {
+			-- 		cmp.config.compare.offset,
+			-- 		cmp.config.compare.exact,
+			-- 		cmp.config.compare.score,
+			-- 		require("cmp-under-comparator").under,
+			-- 		cmp.config.compare.kind,
+			-- 		cmp.config.compare.sort_text,
+			-- 		cmp.config.compare.length,
+			-- 		cmp.config.compare.order,
+			-- 	},
+			-- },
 			mapping = {
 				["<Tab>"] = cmp.mapping(function(fallback)
 					if cmp.visible() then
@@ -98,16 +98,15 @@ return {
 				-- end, { "i", "s", "c" }),
 				-- ["<CR>"] = cmp.mapping(cmp.mapping.confirm({ select = true }), { "i" }),
 			},
-			sources = {
+			sources = cmp.config.sources({
 				{ name = "nvim_lsp" },
-				-- { name = "vsnip" },
 				{ name = "luasnip" },
 				{ name = "treesiter" },
 				{ name = "buffer", max_item_count = 5 },
 				{ name = "path" },
 
 				-- { name = 'cmdline' }
-			},
+			}),
 			formatting = {
 				format = lspkind.cmp_format(),
 			},
@@ -119,18 +118,18 @@ return {
 
 		cmp.setup.cmdline("/", {
 			mapping = cmp.mapping.preset.cmdline(),
-			sources = {
+			sources = cmp.config.sources({
 				{ name = "nvim_lsp_document_symbol" },
 				{ name = "buffer", keyword_length = 3 },
-			},
+			}),
 		})
 
 		cmp.setup.cmdline(":", {
 			mapping = cmp.mapping.preset.cmdline(),
-			sources = {
+			sources = cmp.config.sources({
 				{ name = "path" },
 				{ name = "cmdline" },
-			},
+			}),
 		})
 	end,
 }

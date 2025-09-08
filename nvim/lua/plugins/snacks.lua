@@ -6,7 +6,7 @@ return {
 		animate = { enabled = true },
 		bigfile = { enabled = true },
 		quickfile = { enabled = true },
-		scroll = { enabled = false },
+		scroll = { enabled = true },
 		statuscolumn = { enabled = true },
 		words = { enabled = true },
 		indent = { enabled = true },
